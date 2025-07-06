@@ -1,69 +1,74 @@
-# React + TypeScript + Vite
+# Task Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern task management application built with React 19, TypeScript, and Vite. Features a clean UI with animations, filtering capabilities, user assignment functionality, and comprehensive task statistics.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📝 Create, edit, and delete tasks
+- ✅ Mark tasks as complete/incomplete
+- 👥 Assign tasks to users
+- 🔍 Search and filter tasks by title, user, and completion status
+- 📊 View task statistics (total, completed, pending, completion rate)
+- 👤 View user profiles with contact information
+- 📄 Pagination for efficient task browsing
+- ✨ Smooth animations and transitions
+- 📱 Fully responsive design
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ React 19
+- 🦕 TypeScript
+- ⚡ Vite (for fast development)
+- 💨 Tailwind CSS (for styling)
+- ✨ Lucide Icons (for beautiful icons)
+- 📦 ESBuild (for optimized builds)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (v18+)
+- npm (v9+)
+
+### Installation
+
+1. Clone the repository:
+```javascript
+git clone https://github.com/samAbaasi/todo.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Navigate to the project directory:
+```javascript
+cd todo
+```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Install dependencies:
+```javascript
+npm install
+```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+4. Start the development server:
+```javascript
+npm run dev
+```
+
+5. Open the app in your browser:
+```javascript
+http://localhost:5173
+```
+
+## Project Structure
+```bash
+src/
+├── types/              # TypeScript type definitions
+├── services/           # API service classes
+├── hooks/              # Custom React hooks
+├── components/
+│   ├── ui/             # Reusable UI components
+│   └── features/       # Feature-specific components
+├── pages/              # Application pages
+├── App.tsx             # Main application component
+└── main.tsx            # Application entry point
+public/                 # Static assets
+index.html              # Application entry point
 ```
